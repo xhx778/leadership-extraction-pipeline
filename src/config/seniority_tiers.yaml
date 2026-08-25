@@ -1,0 +1,85 @@
+# Seniority tier classification — single source of truth.
+# Read by both Extractor (classify_title) and Auditor (filter non-senior).
+# Director-related titles are handled programmatically in classify_title,
+# not by yaml patterns. Do NOT add "director" to title_patterns here.
+
+tiers:
+  - name: Board
+    description: |
+      Board members overseeing governance. Includes Chairman, Independent
+      Directors, Non-Executive Directors, and standalone "Director" (handled
+      programmatically in classify_title).
+    title_patterns:
+      - chairman
+      - vice chairman
+      - vice-chairman
+      - chairperson
+      - chair of the board
+      - board member
+
+  - name: C-suite
+    description: |
+      Top management executives reporting to the board. "Managing Director"
+      is handled programmatically and classified here.
+    title_patterns:
+      - ceo
+      - cfo
+      - coo
+      - cto
+      - cmo
+      - cio
+      - chro
+      - clo
+      - cso
+      - cco
+      - cro
+      - chief
+      - general counsel
+      - president
+      - country manager
+      - founder
+      - co-founder
+      - co founder
+      - group ceo
+      - group cfo
+
+  - name: Partner/Advisor
+    description: |
+      Senior leadership in partnership-style firms (VC, PE, consultancy,
+      law firms, asset managers).
+    title_patterns:
+      - managing partner
+      - general partner
+      - founding partner
+      - senior partner
+      - partner
+      - principal
+      - portfolio manager
+      - senior advisor
+      - strategic advisor
+
+  - name: VP-level
+    description: |
+      Senior leadership reporting to C-suite. "Senior Director" is handled
+      programmatically and classified here.
+    title_patterns:
+      - vice president
+      - vice-president
+      - senior vice president
+      - executive vice president
+      - svp
+      - evp
+      - vp
+      - head of
+      - regional head
+      - general manager
+      - regional manager
+      - senior manager
+      - financial controller
+      - finance controller
+
+  - name: Director-level
+    description: |
+      Department-level director (Director of X / Director, X). Handled
+      programmatically in classify_title — title_patterns intentionally empty.
+    title_patterns: []

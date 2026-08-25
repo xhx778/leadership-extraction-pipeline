@@ -1,0 +1,43 @@
+# BFS page detection patterns for classify_page() in node_bfs_navigator.py.
+# Edit here to tune what counts as a "leadership title" or "leadership heading"
+# without touching navigator code.
+
+title_keywords:
+  - Managing Director
+  - General Manager
+  - Country Manager
+  - Vice President
+  - Co-Founder
+  - Chairman
+  - President
+  - Director
+  - Founder
+  - Advisor
+  - Partner
+  - Principal
+  - Head of
+  - Chief
+  - CHRO
+  - CEO
+  - CFO
+  - COO
+  - CTO
+  - CMO
+  - CIO
+  - VP
+
+heading_phrases:
+  - board of directors
+  - board directors
+  - board committees
+  - executive committee
+  - leadership team
+  - management team
+  - senior management
+  - executive team
+  - key management
+  - our leadership
+  - our team
+  - our people
+  - our borad
+  - leadership

@@ -1,0 +1,25 @@
+# Direct dependencies only — transitive deps are managed by the packages below.
+# Generated from scanning all src/**/*.py imports against pip freeze.
+
+# Data
+pandas==3.0.3
+
+# Schema / validation
+pydantic==2.12.5
+
+# LLM clients
+openai==2.38.0          # DeepSeek uses OpenAI-compatible API (base_url override)
+google-genai==1.65.0    # Gemini grounding search backend
+
+# Web / HTTP
+httpx==0.28.1           # async HTTP in node_scout & node_bfs_navigator
+Crawl4AI==0.8.6         # BFS crawler (wraps Playwright)
+lxml==5.4.0             # HTML chrome-stripping in _strip_chrome_text() (node_bfs_navigator)
+
+# Search backends
+tavily-python==0.7.26   # Tavily search backend
+tldextract==5.3.1       # eTLD+1 dedup in tavily_backend
+
+# Config
+PyYAML==6.0.3           # seniority_tiers.yaml, bfs_patterns.yaml
+python-dotenv==1.2.2    # .env loader in config/__init__.py
